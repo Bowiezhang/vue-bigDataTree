@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <div class="content">
-      <el-tree
+      <!-- <el-tree
         :props="props"
         :load="loadNode"
         lazy
         show-checkbox>
-      </el-tree>
+      </el-tree> -->
     </div>
     <div class="content">
-      <big-data-tree></big-data-tree>
+      <big-data-tree :load="loadNode" @check-change="handleCheck"></big-data-tree>
     </div>
   </div>
 </template>
@@ -35,13 +35,16 @@ export default {
 
   methods: {
     loadNode(node, resolve) {
-      console.log(resolve)
       const list = []
-      for (let index = 0; index < 30; index++) {
+      for (let index = 0; index < 3000; index++) {
         list[index] = { name: `节点${index}` }
       }
       
-      return resolve(list)
+      resolve(list)
+    },
+
+    handleCheck(data) {
+      // console.log(data)
     }
   },
 }
