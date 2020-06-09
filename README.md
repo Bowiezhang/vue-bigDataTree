@@ -36,3 +36,8 @@ npm run dev
     default: false,
   }
   ```
+
+* 存在问题  
+  组件中的checkbox默认使用了element组件的checkbox，如果你的项目中未使用element，可以在代码中将checkbox替换
+
+  部分功能尚未完善，例如isLeaf，会在后续持续完善
